@@ -1,3 +1,0 @@
-# Management Data
-
-Hallo.
