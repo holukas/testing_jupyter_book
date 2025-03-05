@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -356,9 +356,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -374,26 +372,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-events">Unique events</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-m1-unique-management-events-between-2001-and-2024"><strong>Table M1</strong>. Unique management events between 2001 and 2024.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simplified-variable-names">Simplified variable names</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-m2-simplified-and-grouped-management-variables"><strong>Table M2</strong>. Simplified and grouped management variables.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-management-info-to-time-series-format">Converting management info to time series format</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#daily-time-scale">Daily time scale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#half-hourly-time-scale">Half-hourly time scale</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -405,182 +383,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="management-data">
 <h1>Management Data<a class="headerlink" href="#management-data" title="Link to this heading">#</a></h1>
-<ul class="simple">
-<li><p><strong>Notebook</strong>: <a class="reference internal" href="#../notebooks/20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.ipynb"><span class="xref myst">22.0_ConvertMgmtToTimeseries.ipynb</span></a></p></li>
-<li><p><strong>Detailed management info</strong>: <a class="reference internal" href="#../data/CH-CHA-Management_2005-2024_20250107.zip"><span class="xref myst">CH-CHA-Management_2005-2024_20250107.zip</span></a> (zipped XLSX file, 8MB)</p></li>
-</ul>
-<p>Detailed management data are available in an Excel file. The file contains info between 2001 and 2024, whereby info for 2024 and some info for 2023 (e.g., C content of fertilizer) was not available yet. Key information was converted to a time series format with the aim to be used e.g. in machine-learning models.</p>
-<section id="unique-events">
-<h2>Unique events<a class="headerlink" href="#unique-events" title="Link to this heading">#</a></h2>
-<p>Each management event was assigned a variable name and a list of unique events was assembled. In total, we identified 34 unique managmement events (<strong>Table M1</strong>).</p>
-<section id="table-m1-unique-management-events-between-2001-and-2024">
-<h3><strong>Table M1</strong>. Unique management events between 2001 and 2024.<a class="headerlink" href="#table-m1-unique-management-events-between-2001-and-2024" title="Link to this heading">#</a></h3>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Unique management events</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1: MGMT_FERT_ORG_MAN</p></td>
-</tr>
-<tr class="row-odd"><td><p>2: MGMT_PPGM_HERBREMOVAL_RUMEX</p></td>
-</tr>
-<tr class="row-even"><td><p>3: MGMT_PPGM_HARROWING_1CM</p></td>
-</tr>
-<tr class="row-odd"><td><p>4: MGMT_USE_GRAZING_CATTLE</p></td>
-</tr>
-<tr class="row-even"><td><p>5: MGMT_PPGM_ROLLING</p></td>
-</tr>
-<tr class="row-odd"><td><p>6: MGMT_PPGM_HARROWING_7CM</p></td>
-</tr>
-<tr class="row-even"><td><p>7: MGMT_SOWING_OVERSOWING_OH440RENO</p></td>
-</tr>
-<tr class="row-odd"><td><p>8: MGMT_USE_MOWING_GRASSSILAGE</p></td>
-</tr>
-<tr class="row-even"><td><p>9: MGMT_FERT_MIN_CAN</p></td>
-</tr>
-<tr class="row-odd"><td><p>10: MGMT_FERT_ORG_SLU</p></td>
-</tr>
-<tr class="row-even"><td><p>11: MGMT_USE_GRAZING_SHEEP</p></td>
-</tr>
-<tr class="row-odd"><td><p>12: MGMT_SOWING_OVERSOWING_OH440EXTRA</p></td>
-</tr>
-<tr class="row-even"><td><p>13: MGMT_USE_MOWING_AFTERGRASS</p></td>
-</tr>
-<tr class="row-odd"><td><p>14: MGMT_PPGM_HERBICIDE_ASULOX</p></td>
-</tr>
-<tr class="row-even"><td><p>15: MGMT_SOILCULTIVATION_ROLLING</p></td>
-</tr>
-<tr class="row-odd"><td><p>16: MGMT_USE_MOWING_HAY</p></td>
-</tr>
-<tr class="row-even"><td><p>17: MGMT_SOWING_OVERSOWING_OH440RENOTURBO</p></td>
-</tr>
-<tr class="row-odd"><td><p>18: MGMT_SOWING_OVERSOWING_OH240RENO</p></td>
-</tr>
-<tr class="row-even"><td><p>19: MGMT_PPGM_HERBICIDE_ALLYTABS</p></td>
-</tr>
-<tr class="row-odd"><td><p>20: MGMT_SOILCULTIVATION_PLOUGHING</p></td>
-</tr>
-<tr class="row-even"><td><p>21: MGMT_SOILCULTIVATION_HARROWING_7CM</p></td>
-</tr>
-<tr class="row-odd"><td><p>22: MGMT_SOWING_RESOWING_OH440EXTRA</p></td>
-</tr>
-<tr class="row-even"><td><p>23: MGMT_PPGM_PESTICIDE_MOLLUSCICIDE</p></td>
-</tr>
-<tr class="row-odd"><td><p>24: MGMT_PPGM_HERBICIDE_HARMONYTABS</p></td>
-</tr>
-<tr class="row-even"><td><p>25: MGMT_PPGM_HERBICIDE_ASULAM</p></td>
-</tr>
-<tr class="row-odd"><td><p>26: MGMT_SOWING_OVERSOWING_HEBE-FIONA-TEDI</p></td>
-</tr>
-<tr class="row-even"><td><p>27: MGMT_SOILCULTIVATION_HARROWING_1CM</p></td>
-</tr>
-<tr class="row-odd"><td><p>28: MGMT_USE_MOWING</p></td>
-</tr>
-<tr class="row-even"><td><p>29: MGMT_SOWING_OVERSOWING_HEBE-FIONA-MERULA</p></td>
-</tr>
-<tr class="row-odd"><td><p>30: MGMT_PPGM_HERBICIDE_ROUNDUP</p></td>
-</tr>
-<tr class="row-even"><td><p>31: MGMT_SOILCULTIVATION_TILLAGE_3-4CM</p></td>
-</tr>
-<tr class="row-odd"><td><p>32: MGMT_SOWING_RESOWING_UFA-420</p></td>
-</tr>
-<tr class="row-even"><td><p>33: MGMT_PPGM_HERBICIDE</p></td>
-</tr>
-<tr class="row-odd"><td><p>34: MGMT_SOILCULTIVATION_HARROWING</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-</section>
-<section id="simplified-variable-names">
-<h2>Simplified variable names<a class="headerlink" href="#simplified-variable-names" title="Link to this heading">#</a></h2>
-<p>Unique events were simplified and grouped together, where appropriate. In addition, the parcel info was added to the variable names. We identified 14 events that were relevant for either parcel A or parcel B (<strong>Table M2</strong>).</p>
-<section id="table-m2-simplified-and-grouped-management-variables">
-<h3><strong>Table M2</strong>. Simplified and grouped management variables.<a class="headerlink" href="#table-m2-simplified-and-grouped-management-variables" title="Link to this heading">#</a></h3>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Management per parcel</p></th>
-<th class="head"><p>counts</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>MGMT_MOWING_PARCEL-B</p></td>
-<td><p>118</p></td>
-</tr>
-<tr class="row-odd"><td><p>MGMT_FERT_ORG_PARCEL-A</p></td>
-<td><p>112</p></td>
-</tr>
-<tr class="row-even"><td><p>MGMT_MOWING_PARCEL-A</p></td>
-<td><p>110</p></td>
-</tr>
-<tr class="row-odd"><td><p>MGMT_FERT_ORG_PARCEL-B</p></td>
-<td><p>85</p></td>
-</tr>
-<tr class="row-even"><td><p>MGMT_GRAZING_PARCEL-B</p></td>
-<td><p>36</p></td>
-</tr>
-<tr class="row-odd"><td><p>MGMT_GRAZING_PARCEL-A</p></td>
-<td><p>34</p></td>
-</tr>
-<tr class="row-even"><td><p>MGMT_SOWING_PARCEL-B</p></td>
-<td><p>21</p></td>
-</tr>
-<tr class="row-odd"><td><p>MGMT_SOILCULTIVATION_PARCEL-B</p></td>
-<td><p>17</p></td>
-</tr>
-<tr class="row-even"><td><p>MGMT_PESTICIDE_HERBICIDE_PARCEL-B</p></td>
-<td><p>12</p></td>
-</tr>
-<tr class="row-odd"><td><p>MGMT_PESTICIDE_HERBICIDE_PARCEL-A</p></td>
-<td><p>11</p></td>
-</tr>
-<tr class="row-even"><td><p>MGMT_SOILCULTIVATION_PARCEL-A</p></td>
-<td><p>11</p></td>
-</tr>
-<tr class="row-odd"><td><p>MGMT_SOWING_PARCEL-A</p></td>
-<td><p>6</p></td>
-</tr>
-<tr class="row-even"><td><p>MGMT_FERT_MIN_PARCEL-A</p></td>
-<td><p>5</p></td>
-</tr>
-<tr class="row-odd"><td><p>MGMT_FERT_MIN_PARCEL-B</p></td>
-<td><p>2</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-</section>
-<section id="converting-management-info-to-time-series-format">
-<h2>Converting management info to time series format<a class="headerlink" href="#converting-management-info-to-time-series-format" title="Link to this heading">#</a></h2>
-<section id="daily-time-scale">
-<h3>Daily time scale<a class="headerlink" href="#daily-time-scale" title="Link to this heading">#</a></h3>
-<p>In order to convert <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> information for each event to time series format, an empty dataframe with <em>daily</em> time resolution was created. Since the management info goes back to 2001, the timestamp of the dataframe was extended. As such, the first timestamp was <code class="docutils literal notranslate"><span class="pre">2001-01-01</span></code>, the last timestamp <code class="docutils literal notranslate"><span class="pre">2023-12-31</span></code>.</p>
-<p>The info from the Excel file was then inserted into the empty dataframe. When management took place, values in the respective data column for the respective day(s) were set to <code class="docutils literal notranslate"><span class="pre">1</span></code>, otherwise to <code class="docutils literal notranslate"><span class="pre">0</span></code>. All values of the respective days of management were set to <code class="docutils literal notranslate"><span class="pre">1</span></code> because the exact starting and end times were not available for all events.</p>
-<blockquote>
-<div><p><strong>Example</strong>
-The event <code class="docutils literal notranslate"><span class="pre">MGMT_GRAZING_PARCEL-B</span></code> had the start date <code class="docutils literal notranslate"><span class="pre">2008-11-01</span></code> and the end date <code class="docutils literal notranslate"><span class="pre">2008-11-04</span></code>. In the dataframe, <code class="docutils literal notranslate"><span class="pre">1</span></code> was inserted in the column <code class="docutils literal notranslate"><span class="pre">MGMT_GRAZING_PARCEL-B</span></code> between the (daily) timestamps <code class="docutils literal notranslate"><span class="pre">2008-11-01</span></code> and <code class="docutils literal notranslate"><span class="pre">2008-11-04</span></code> (inclusive start and end dates).</p>
-</div></blockquote>
-<p>For all management events, <code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variables were calculated, describing the temporal distance of each day to the previous management event.</p>
-<p>TODO: add figure</p>
-<blockquote>
-<div><p><strong>Example</strong><br />
-The event <code class="docutils literal notranslate"><span class="pre">MGMT_GRAZING_PARCEL-B</span></code> had the start date <code class="docutils literal notranslate"><span class="pre">2008-11-01</span></code> and the end date <code class="docutils literal notranslate"><span class="pre">2008-11-04</span></code>. The variable <code class="docutils literal notranslate"><span class="pre">TIMESINCE_MGMT_GRAZING_PARCEL-B</span></code> was calculated and has value <code class="docutils literal notranslate"><span class="pre">0</span></code> between <code class="docutils literal notranslate"><span class="pre">2008-11-01</span></code> and <code class="docutils literal notranslate"><span class="pre">2008-11-04</span></code>, value <code class="docutils literal notranslate"><span class="pre">1</span></code> on <code class="docutils literal notranslate"><span class="pre">2008-11-05</span></code>, value <code class="docutils literal notranslate"><span class="pre">2</span></code> on <code class="docutils literal notranslate"><span class="pre">2008-11-06</span></code>, etc…</p>
-</div></blockquote>
-</section>
-<section id="half-hourly-time-scale">
-<h3>Half-hourly time scale<a class="headerlink" href="#half-hourly-time-scale" title="Link to this heading">#</a></h3>
-<p>Flux and meteo data are available with a <strong>half-hourly (hh)</strong> timestamp. Therefore, the daily management dataframe was converted to hh time resolution. The hh timestamp shows the <em>middle</em> of the averaging interval, <code class="docutils literal notranslate"><span class="pre">TIMESTAMP_MIDDLE</span></code>.</p>
-<blockquote>
-<div><p><strong>Example</strong><br />
-At the daily scale, the event <code class="docutils literal notranslate"><span class="pre">MGMT_GRAZING_PARCEL-B</span></code> had the start date <code class="docutils literal notranslate"><span class="pre">2008-11-01</span></code> and the end date <code class="docutils literal notranslate"><span class="pre">2008-11-04</span></code>. Converted to the half-hourly timescale, all values between <code class="docutils literal notranslate"><span class="pre">2008-11-01</span> <span class="pre">00:15:00</span></code> and <code class="docutils literal notranslate"><span class="pre">2008-11-04</span> <span class="pre">23:45:00</span></code> were set to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
-</div></blockquote>
-<p>Wind direction was then added to the hh management data and used to create new <code class="docutils literal notranslate"><span class="pre">_FOOTPRINT</span></code> (suffix) variables. These variables contain info about the parcel from where the wind was arriving at the sensors. This means, depending on wind direction, the <code class="docutils literal notranslate"><span class="pre">_FOOTPRINT</span></code> variables can contain info from <code class="docutils literal notranslate"><span class="pre">_PARCEL-A</span></code> or <code class="docutils literal notranslate"><span class="pre">_PARCEL-B</span></code> variables.</p>
-<p>Parcel division runs diagonally from 250° to 70°, with the measurement station at the center. In earlier years (2005-2013), the division was less clear, with the division line shifted further to the south, but an analysis in Feigenwinter et al. (2023) showed that most of the contribution to the flux footprint (&gt;97%) came from <code class="docutils literal notranslate"><span class="pre">PARCEL-B</span></code>, north of the station.</p>
-</section>
-</section>
+<p>Hallo.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -628,33 +431,6 @@ At the daily scale, the event <code class="docutils literal notranslate"><span c
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-events">Unique events</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-m1-unique-management-events-between-2001-and-2024"><strong>Table M1</strong>. Unique management events between 2001 and 2024.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simplified-variable-names">Simplified variable names</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-m2-simplified-and-grouped-management-variables"><strong>Table M2</strong>. Simplified and grouped management variables.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-management-info-to-time-series-format">Converting management info to time series format</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#daily-time-scale">Daily time scale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#half-hourly-time-scale">Half-hourly time scale</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
