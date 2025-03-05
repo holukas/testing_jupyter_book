@@ -8,5 +8,8 @@ chapters:
 - file: notebooks
 - file: markdown-notebooks
 - file: text1
-- file: Variables
-
+- file: Management_Data
+- file: Flux_Calculations
+- file: Flux_Post-processing
+- file: Links
+- file: References
