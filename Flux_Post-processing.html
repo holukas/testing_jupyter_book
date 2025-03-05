@@ -384,6 +384,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux-processing-chain-notebooks">Flux processing chain notebooks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-2-quality-flag-expansion">Level 2: Quality flag expansion</a><ul class="nav section-nav flex-column">
@@ -441,41 +442,15 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="flux-post-processing">
 <h1>Flux Post-processing<a class="headerlink" href="#flux-post-processing" title="Link to this heading">#</a></h1>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Link to this heading">#</a></h2>
+<p>text jere.</p>
 <ul class="simple">
 <li><p>Post-processing follows the <a class="reference external" href="https://www.swissfluxnet.ethz.ch/index.php/data/ecosystem-fluxes/flux-processing-chain/">Swiss Fluxnet Flux Processing Chain</a></p></li>
 </ul>
+</section>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart
-L1F[L1 fluxes]
-L2QCF[L2 quality flags]
-L31F[L3.1 fluxes]
-L31Ffiltered[L3.1 fluxes filtered]
-L32QCF[L3.2 quality flags]
-L33QCF[L3.3 quality flags]
-QCF[overall quality flag QCF]
-L31FfilteredQCF[L3.1 fluxes filtered with QCF]
-L41F[L4.1 gap-filled fluxes]
-L42F[L4.2 partitioned fluxes]
-
-L1F --&gt; L2QCF
-L2QCF --&gt; L31Ffiltered
-L1F --&gt; L31F
-L31F --&gt; L31Ffiltered
-L31Ffiltered --&gt; L32QCF
-L1F --&gt; L33QCF
-
-L2QCF --&gt; QCF
-L32QCF --&gt; QCF
-L33QCF --&gt; QCF
-
-QCF -- applied to storage-corrected fluxes --&gt; L31FfilteredQCF
-L31FfilteredQCF -- gap-filling --&gt; L41F
-
-L41F -- partitioning (NEE) --&gt; L42F
-
-</pre></div>
-</div>
 <ul class="simple">
 <li><p><strong>Level-2</strong> creates additional quality flags that are then combined to one overall quality flag <code class="docutils literal notranslate"><span class="pre">QCF</span></code> (quality control flag)</p></li>
 <li><p><strong>Level-3.1</strong> adds the storage term to the respective flux</p></li>
@@ -1035,6 +1010,7 @@ flowchart LR
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux-processing-chain-notebooks">Flux processing chain notebooks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-2-quality-flag-expansion">Level 2: Quality flag expansion</a><ul class="nav section-nav flex-column">
