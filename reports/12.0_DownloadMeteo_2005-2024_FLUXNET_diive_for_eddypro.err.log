@@ -1,0 +1,61 @@
+Traceback (most recent call last):
+  File "C:\Users\holukas\AppData\Local\miniconda3\envs\testing_jupyter_book\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\holukas\AppData\Local\miniconda3\envs\testing_jupyter_book\Lib\site-packages\nbclient\client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\holukas\AppData\Local\miniconda3\envs\testing_jupyter_book\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\holukas\AppData\Local\miniconda3\envs\testing_jupyter_book\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\holukas\AppData\Local\miniconda3\envs\testing_jupyter_book\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\holukas\AppData\Local\miniconda3\envs\testing_jupyter_book\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\holukas\AppData\Local\miniconda3\envs\testing_jupyter_book\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from datetime import datetime
+import importlib.metadata
+import matplotlib
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
+%matplotlib inline
+import numpy as np
+import pandas as pd
+import seaborn as sns
+sns.set_theme('notebook')
+from diive.core.plotting.timeseries import TimeSeries
+from dbc_influxdb import dbcInflux
+from diive.core.plotting.heatmap_datetime import HeatmapDateTime
+from diive.core.times.times import DetectFrequency
+from diive.core.times.times import TimestampSanitizer
+from diive.pkgs.createvar.potentialradiation import potrad
+from diive.pkgs.gapfilling.xgboost_ts import XGBoostTS
+import warnings
+from influxdb_client.client.warnings import MissingPivotFunction
+warnings.filterwarnings(action='ignore', category=FutureWarning)
+warnings.filterwarnings(action='ignore', category=UserWarning)
+dt_string = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+version_diive = importlib.metadata.version("diive")
+print(f"diive version: v{version_diive}")
+version_dbc = importlib.metadata.version("dbc_influxdb")
+print(f"dbc-influxdb version: v{version_dbc}")
+dbc = dbcInflux(dirconf=DIRCONF)  # Connect to database
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 8[39m
+[32m      6[39m get_ipython().run_line_magic([33m'[39m[33mmatplotlib[39m[33m'[39m, [33m'[39m[33minline[39m[33m'[39m)
+[32m      7[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mnp[39;00m
+[32m----> [39m[32m8[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mpandas[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mpd[39;00m
+[32m      9[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mseaborn[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01msns[39;00m
+[32m     10[39m sns.set_theme([33m'[39m[33mnotebook[39m[33m'[39m)
+
+[31mModuleNotFoundError[39m: No module named 'pandas'
+
