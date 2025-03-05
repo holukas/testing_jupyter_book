@@ -1,0 +1,699 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Management Data &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Management_Data';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text1.html">Text 1</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FManagement_Data.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Management_Data.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Management Data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-events">Unique events</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-m1-unique-management-events-between-2001-and-2024"><strong>Table M1</strong>. Unique management events between 2001 and 2024.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simplified-variable-names">Simplified variable names</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-m2-simplified-and-grouped-management-variables"><strong>Table M2</strong>. Simplified and grouped management variables.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-management-info-to-time-series-format">Converting management info to time series format</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#daily-time-scale">Daily time scale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#half-hourly-time-scale">Half-hourly time scale</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="management-data">
+<h1>Management Data<a class="headerlink" href="#management-data" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>Notebook</strong>: <a class="reference internal" href="#../notebooks/20_MANAGEMENT/22.0_ConvertMgmtToTimeseries.ipynb"><span class="xref myst">22.0_ConvertMgmtToTimeseries.ipynb</span></a></p></li>
+<li><p><strong>Detailed management info</strong>: <a class="reference internal" href="#../data/CH-CHA-Management_2005-2024_20250107.zip"><span class="xref myst">CH-CHA-Management_2005-2024_20250107.zip</span></a> (zipped XLSX file, 8MB)</p></li>
+</ul>
+<p>Detailed management data are available in an Excel file. The file contains info between 2001 and 2024, whereby info for 2024 and some info for 2023 (e.g., C content of fertilizer) was not available yet. Key information was converted to a time series format with the aim to be used e.g. in machine-learning models.</p>
+<section id="unique-events">
+<h2>Unique events<a class="headerlink" href="#unique-events" title="Link to this heading">#</a></h2>
+<p>Each management event was assigned a variable name and a list of unique events was assembled. In total, we identified 34 unique managmement events (<strong>Table M1</strong>).</p>
+<section id="table-m1-unique-management-events-between-2001-and-2024">
+<h3><strong>Table M1</strong>. Unique management events between 2001 and 2024.<a class="headerlink" href="#table-m1-unique-management-events-between-2001-and-2024" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Unique management events</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1: MGMT_FERT_ORG_MAN</p></td>
+</tr>
+<tr class="row-odd"><td><p>2: MGMT_PPGM_HERBREMOVAL_RUMEX</p></td>
+</tr>
+<tr class="row-even"><td><p>3: MGMT_PPGM_HARROWING_1CM</p></td>
+</tr>
+<tr class="row-odd"><td><p>4: MGMT_USE_GRAZING_CATTLE</p></td>
+</tr>
+<tr class="row-even"><td><p>5: MGMT_PPGM_ROLLING</p></td>
+</tr>
+<tr class="row-odd"><td><p>6: MGMT_PPGM_HARROWING_7CM</p></td>
+</tr>
+<tr class="row-even"><td><p>7: MGMT_SOWING_OVERSOWING_OH440RENO</p></td>
+</tr>
+<tr class="row-odd"><td><p>8: MGMT_USE_MOWING_GRASSSILAGE</p></td>
+</tr>
+<tr class="row-even"><td><p>9: MGMT_FERT_MIN_CAN</p></td>
+</tr>
+<tr class="row-odd"><td><p>10: MGMT_FERT_ORG_SLU</p></td>
+</tr>
+<tr class="row-even"><td><p>11: MGMT_USE_GRAZING_SHEEP</p></td>
+</tr>
+<tr class="row-odd"><td><p>12: MGMT_SOWING_OVERSOWING_OH440EXTRA</p></td>
+</tr>
+<tr class="row-even"><td><p>13: MGMT_USE_MOWING_AFTERGRASS</p></td>
+</tr>
+<tr class="row-odd"><td><p>14: MGMT_PPGM_HERBICIDE_ASULOX</p></td>
+</tr>
+<tr class="row-even"><td><p>15: MGMT_SOILCULTIVATION_ROLLING</p></td>
+</tr>
+<tr class="row-odd"><td><p>16: MGMT_USE_MOWING_HAY</p></td>
+</tr>
+<tr class="row-even"><td><p>17: MGMT_SOWING_OVERSOWING_OH440RENOTURBO</p></td>
+</tr>
+<tr class="row-odd"><td><p>18: MGMT_SOWING_OVERSOWING_OH240RENO</p></td>
+</tr>
+<tr class="row-even"><td><p>19: MGMT_PPGM_HERBICIDE_ALLYTABS</p></td>
+</tr>
+<tr class="row-odd"><td><p>20: MGMT_SOILCULTIVATION_PLOUGHING</p></td>
+</tr>
+<tr class="row-even"><td><p>21: MGMT_SOILCULTIVATION_HARROWING_7CM</p></td>
+</tr>
+<tr class="row-odd"><td><p>22: MGMT_SOWING_RESOWING_OH440EXTRA</p></td>
+</tr>
+<tr class="row-even"><td><p>23: MGMT_PPGM_PESTICIDE_MOLLUSCICIDE</p></td>
+</tr>
+<tr class="row-odd"><td><p>24: MGMT_PPGM_HERBICIDE_HARMONYTABS</p></td>
+</tr>
+<tr class="row-even"><td><p>25: MGMT_PPGM_HERBICIDE_ASULAM</p></td>
+</tr>
+<tr class="row-odd"><td><p>26: MGMT_SOWING_OVERSOWING_HEBE-FIONA-TEDI</p></td>
+</tr>
+<tr class="row-even"><td><p>27: MGMT_SOILCULTIVATION_HARROWING_1CM</p></td>
+</tr>
+<tr class="row-odd"><td><p>28: MGMT_USE_MOWING</p></td>
+</tr>
+<tr class="row-even"><td><p>29: MGMT_SOWING_OVERSOWING_HEBE-FIONA-MERULA</p></td>
+</tr>
+<tr class="row-odd"><td><p>30: MGMT_PPGM_HERBICIDE_ROUNDUP</p></td>
+</tr>
+<tr class="row-even"><td><p>31: MGMT_SOILCULTIVATION_TILLAGE_3-4CM</p></td>
+</tr>
+<tr class="row-odd"><td><p>32: MGMT_SOWING_RESOWING_UFA-420</p></td>
+</tr>
+<tr class="row-even"><td><p>33: MGMT_PPGM_HERBICIDE</p></td>
+</tr>
+<tr class="row-odd"><td><p>34: MGMT_SOILCULTIVATION_HARROWING</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="simplified-variable-names">
+<h2>Simplified variable names<a class="headerlink" href="#simplified-variable-names" title="Link to this heading">#</a></h2>
+<p>Unique events were simplified and grouped together, where appropriate. In addition, the parcel info was added to the variable names. We identified 14 events that were relevant for either parcel A or parcel B (<strong>Table M2</strong>).</p>
+<section id="table-m2-simplified-and-grouped-management-variables">
+<h3><strong>Table M2</strong>. Simplified and grouped management variables.<a class="headerlink" href="#table-m2-simplified-and-grouped-management-variables" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Management per parcel</p></th>
+<th class="head"><p>counts</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MGMT_MOWING_PARCEL-B</p></td>
+<td><p>118</p></td>
+</tr>
+<tr class="row-odd"><td><p>MGMT_FERT_ORG_PARCEL-A</p></td>
+<td><p>112</p></td>
+</tr>
+<tr class="row-even"><td><p>MGMT_MOWING_PARCEL-A</p></td>
+<td><p>110</p></td>
+</tr>
+<tr class="row-odd"><td><p>MGMT_FERT_ORG_PARCEL-B</p></td>
+<td><p>85</p></td>
+</tr>
+<tr class="row-even"><td><p>MGMT_GRAZING_PARCEL-B</p></td>
+<td><p>36</p></td>
+</tr>
+<tr class="row-odd"><td><p>MGMT_GRAZING_PARCEL-A</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-even"><td><p>MGMT_SOWING_PARCEL-B</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-odd"><td><p>MGMT_SOILCULTIVATION_PARCEL-B</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>MGMT_PESTICIDE_HERBICIDE_PARCEL-B</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-odd"><td><p>MGMT_PESTICIDE_HERBICIDE_PARCEL-A</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-even"><td><p>MGMT_SOILCULTIVATION_PARCEL-A</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-odd"><td><p>MGMT_SOWING_PARCEL-A</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>MGMT_FERT_MIN_PARCEL-A</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>MGMT_FERT_MIN_PARCEL-B</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="converting-management-info-to-time-series-format">
+<h2>Converting management info to time series format<a class="headerlink" href="#converting-management-info-to-time-series-format" title="Link to this heading">#</a></h2>
+<section id="daily-time-scale">
+<h3>Daily time scale<a class="headerlink" href="#daily-time-scale" title="Link to this heading">#</a></h3>
+<p>In order to convert <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> information for each event to time series format, an empty dataframe with <em>daily</em> time resolution was created. Since the management info goes back to 2001, the timestamp of the dataframe was extended. As such, the first timestamp was <code class="docutils literal notranslate"><span class="pre">2001-01-01</span></code>, the last timestamp <code class="docutils literal notranslate"><span class="pre">2023-12-31</span></code>.</p>
+<p>The info from the Excel file was then inserted into the empty dataframe. When management took place, values in the respective data column for the respective day(s) were set to <code class="docutils literal notranslate"><span class="pre">1</span></code>, otherwise to <code class="docutils literal notranslate"><span class="pre">0</span></code>. All values of the respective days of management were set to <code class="docutils literal notranslate"><span class="pre">1</span></code> because the exact starting and end times were not available for all events.</p>
+<blockquote>
+<div><p><strong>Example</strong>
+The event <code class="docutils literal notranslate"><span class="pre">MGMT_GRAZING_PARCEL-B</span></code> had the start date <code class="docutils literal notranslate"><span class="pre">2008-11-01</span></code> and the end date <code class="docutils literal notranslate"><span class="pre">2008-11-04</span></code>. In the dataframe, <code class="docutils literal notranslate"><span class="pre">1</span></code> was inserted in the column <code class="docutils literal notranslate"><span class="pre">MGMT_GRAZING_PARCEL-B</span></code> between the (daily) timestamps <code class="docutils literal notranslate"><span class="pre">2008-11-01</span></code> and <code class="docutils literal notranslate"><span class="pre">2008-11-04</span></code> (inclusive start and end dates).</p>
+</div></blockquote>
+<p>For all management events, <code class="docutils literal notranslate"><span class="pre">TIMESINCE</span></code> variables were calculated, describing the temporal distance of each day to the previous management event.</p>
+<p>TODO: add figure</p>
+<blockquote>
+<div><p><strong>Example</strong><br />
+The event <code class="docutils literal notranslate"><span class="pre">MGMT_GRAZING_PARCEL-B</span></code> had the start date <code class="docutils literal notranslate"><span class="pre">2008-11-01</span></code> and the end date <code class="docutils literal notranslate"><span class="pre">2008-11-04</span></code>. The variable <code class="docutils literal notranslate"><span class="pre">TIMESINCE_MGMT_GRAZING_PARCEL-B</span></code> was calculated and has value <code class="docutils literal notranslate"><span class="pre">0</span></code> between <code class="docutils literal notranslate"><span class="pre">2008-11-01</span></code> and <code class="docutils literal notranslate"><span class="pre">2008-11-04</span></code>, value <code class="docutils literal notranslate"><span class="pre">1</span></code> on <code class="docutils literal notranslate"><span class="pre">2008-11-05</span></code>, value <code class="docutils literal notranslate"><span class="pre">2</span></code> on <code class="docutils literal notranslate"><span class="pre">2008-11-06</span></code>, etc…</p>
+</div></blockquote>
+</section>
+<section id="half-hourly-time-scale">
+<h3>Half-hourly time scale<a class="headerlink" href="#half-hourly-time-scale" title="Link to this heading">#</a></h3>
+<p>Flux and meteo data are available with a <strong>half-hourly (hh)</strong> timestamp. Therefore, the daily management dataframe was converted to hh time resolution. The hh timestamp shows the <em>middle</em> of the averaging interval, <code class="docutils literal notranslate"><span class="pre">TIMESTAMP_MIDDLE</span></code>.</p>
+<blockquote>
+<div><p><strong>Example</strong><br />
+At the daily scale, the event <code class="docutils literal notranslate"><span class="pre">MGMT_GRAZING_PARCEL-B</span></code> had the start date <code class="docutils literal notranslate"><span class="pre">2008-11-01</span></code> and the end date <code class="docutils literal notranslate"><span class="pre">2008-11-04</span></code>. Converted to the half-hourly timescale, all values between <code class="docutils literal notranslate"><span class="pre">2008-11-01</span> <span class="pre">00:15:00</span></code> and <code class="docutils literal notranslate"><span class="pre">2008-11-04</span> <span class="pre">23:45:00</span></code> were set to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+</div></blockquote>
+<p>Wind direction was then added to the hh management data and used to create new <code class="docutils literal notranslate"><span class="pre">_FOOTPRINT</span></code> (suffix) variables. These variables contain info about the parcel from where the wind was arriving at the sensors. This means, depending on wind direction, the <code class="docutils literal notranslate"><span class="pre">_FOOTPRINT</span></code> variables can contain info from <code class="docutils literal notranslate"><span class="pre">_PARCEL-A</span></code> or <code class="docutils literal notranslate"><span class="pre">_PARCEL-B</span></code> variables.</p>
+<p>Parcel division runs diagonally from 250° to 70°, with the measurement station at the center. In earlier years (2005-2013), the division was less clear, with the division line shifted further to the south, but an analysis in Feigenwinter et al. (2023) showed that most of the contribution to the flux footprint (&gt;97%) came from <code class="docutils literal notranslate"><span class="pre">PARCEL-B</span></code>, north of the station.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-events">Unique events</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-m1-unique-management-events-between-2001-and-2024"><strong>Table M1</strong>. Unique management events between 2001 and 2024.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simplified-variable-names">Simplified variable names</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-m2-simplified-and-grouped-management-variables"><strong>Table M2</strong>. Simplified and grouped management variables.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-management-info-to-time-series-format">Converting management info to time series format</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#daily-time-scale">Daily time scale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#half-hourly-time-scale">Half-hourly time scale</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
